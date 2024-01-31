@@ -37,5 +37,5 @@ Route::get("/lst_cab_docs/{id_user}", "App\Http\Controllers\RelUserCabdControlle
 /* CARGA DE MOVIMIENTOS PENDIENTES A LA LISTA*/
 Route::post("/add_movpend", "App\Http\Controllers\MovDocsController@add_movpend");
 
-
-
+/* cambia el estado de la tarea */
+Route::put("/chk_mov_docs/{id_mov_docs}", "App\Http\Controllers\MovDocsController@chk_mov_docs");

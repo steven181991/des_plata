@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class cab_docs extends Model
 {
-    use HasFactory;
+    protected $table = 'cab_docs';
+
+    public function movDocs()
+    {
+        return $this->hasMany(MovDoc::class, 'id_cabdoc');
+    }
+    //use HasFactory;
 }

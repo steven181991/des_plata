@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class mov_docs extends Model
 {
-    use HasFactory;
+    protected $table = 'mov_docs';
+    //use HasFactory;
 }

@@ -38,9 +38,9 @@ class UsuariosController extends Controller
             ->where('correo', $correo)
             ->where('clave', $clave)
             ->first();
-
+        
         if ($usuario) {
-            return response()->json(['sms' => 'Acceso Exitoso'], 200);
+            return response()->json(['sms' => 'Acceso Exitoso','id' => $usuario->id,], 200);
         } else {
             return response()->json(['sms' => 'Credenciales Erradas'], 401);
         }

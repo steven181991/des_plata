@@ -19,13 +19,21 @@ class MovDocsController extends Controller
         return response()->json($mov_doc, 201);
     } 
 
-    public function lst_mov_docs(string $id){
-        
+    public function lst_mov_docs(string $id){        
         $listado_mov = mov_docs::where('id_cabdoc', $id)->get();
 
         return response()->json($listado_mov, 200);
     }
 
+
+    public function chk_mov_docs(Request $request,string $id){
+        $mov_docs = mov_docs::find($id);
+        $mov_docs->estado = $request->estado;
+        $mov_docs->save();
+
+        
+        return response()->json($mov_docs, 200);
+    }
 
     /**
      * Display a listing of the resource.
